@@ -1,5 +1,6 @@
 # Super user
 alias _='sudo'
+alias ss='sudo -s'
 
 # ZSH History
 alias history='fc -il 1'
