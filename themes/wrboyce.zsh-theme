@@ -9,7 +9,7 @@ ZSH_THEME_COLOUR_2="%{$fg[yellow]%}"
 ZSH_THEME_GIT_PROMPT_PREFIX="${ZSH_THEME_COLOUR_2}[${ZSH_THEME_COLOUR_1}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="${ZSH_THEME_COLOUR_2}]%{${reset_color}%}"
 # show a red cross if the repo is dirty, no flag for clean
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}✗${${reset_color}%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}✗%{${reset_color}%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 # show an indicator if we are behind/ahead remote
 ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE="${ZSH_THEME_COLOUR_1}↓%{${reset_color}%}"
