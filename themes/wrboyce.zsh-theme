@@ -64,4 +64,4 @@ function git_path_precmd() {
 }
 add-zsh-hook precmd git_path_precmd
 
-PROMPT='$(venv_prompt_info)$(sudo_prompt_info)${ZSH_THEME_COLOUR_1}%m${ZSH_THEME_COLOUR_2}:${ZSH_THEME_COLOUR_1}%(1v#$(git_prompt_path)#%~)$(git_prompt_info)${ZSH_THEME_COLOUR_2}%#${%{reset_color}%} '
+PROMPT='$(venv_prompt_info)$(sudo_prompt_info)${ZSH_THEME_COLOUR_1}%m${ZSH_THEME_COLOUR_2}:${ZSH_THEME_COLOUR_1}%(1v#$(git_prompt_path)#%~)$(git_prompt_info)${ZSH_THEME_COLOUR_2}%#%{${reset_color}%} '
