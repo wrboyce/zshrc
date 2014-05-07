@@ -1,7 +1,6 @@
-## TODO:
-# psvar[1] should contain git-repo-name:relative-path
 ZSH_THEME_COLOUR_1="%{$fg[blue]%}"
 ZSH_THEME_COLOUR_2="%{$fg[yellow]%}"
+[ ${UID} -eq 0 ] && ZSH_THEME_COLOUR_2="%{$fg[red]%}"
 
 
 ## Git Info
