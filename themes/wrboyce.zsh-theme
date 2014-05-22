@@ -2,6 +2,8 @@ ZSH_THEME_COLOUR_1="%{$fg[blue]%}"
 ZSH_THEME_COLOUR_2="%{$fg[yellow]%}"
 [ ${UID} -eq 0 ] && ZSH_THEME_COLOUR_2="%{$fg[red]%}"
 
+## make `ack` match the theme
+export ACK_OPTIONS='--color-filename=cyan --color-match=magenta --color-lineno=bright_magenta'
 
 ## Git Info
 # wrap branch in square brackets
