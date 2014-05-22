@@ -27,6 +27,41 @@ ZSH_THEME_VENV_PROMPT_SUFFIX="${ZSH_THEME_COLOUR_2})%{${reset_color}%}"
 ZSH_THEME_SUDO_PROMPT_PREFIX="${ZSH_THEME_COLOUR_1}"
 ZSH_THEME_SUDO_PROMPT_SUFFIX="${ZSH_THEME_COLOUR_2}@%{${reset_color}%}"
 
+## Command Colours (zsh-syntax-highlighting)
+# this is mostly a work in progress
+ZSH_HIGHLIGHT_STYLES[assign]='fg=magenta,bold,underline'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=magenta,bold,underline'
+ZSH_HIGHLIGHT_STYLES[command]='fg=magenta,bold'
+ZSH_HIGHLIGHT_STYLES[function]='fg=magenta,bold'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=magenta,bold'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
+
+ZSH_HIGHLIGHT_STYLES[path]='fg=magenta,underline'
+ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=magenta,underline'
+ZSH_HIGHLIGHT_STYLES[path_approx]='fg=magenta,underline'
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=magenta,underline'
+
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta'
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=magenta,bold'
+
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=magenta'
+ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=magenta,bold'
+
+ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=green'
+
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
+ZSH_HIGHLIGHT_STYLES[default]='fg=blue'
+
+ZSH_HIGHLIGHT_STYLES[bracket-error]='bg=red'
+ZSH_HIGHLIGHT_STYLES[bracket-level-1]='fg=magenta,bold'
+ZSH_HIGHLIGHT_STYLES[bracket-level-2]='fg=magenta'
+ZSH_HIGHLIGHT_STYLES[bracket-level-3]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[bracket-level-4]='fg=red,bold'
+ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]='fg=none,underline'
+
 ## Supporting functions
 venv_prompt_info() {
     [ ! -z ${VIRTUAL_ENV} ] && echo "${ZSH_THEME_VENV_PROMPT_PREFIX}${VIRTUAL_ENV##*/}${ZSH_THEME_VENV_PROMPT_SUFFIX}"
