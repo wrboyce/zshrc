@@ -10,7 +10,7 @@ if [ ! -d ~/.oh-my-zsh ]; then
   /usr/bin/env git clone --recursive https://github.com/robbyrussell/oh-my-zsh.git ${HOME}/.oh-my-zsh
 fi
 echo "Cloning oh-my-zsh-custom..."
-/usr/bin/env git clone --recursive https://github.com/wrboyce/oh-my-zsh-custom.git ${HOME}/.oh-my-zsh/custom
+/usr/bin/env git clone --recursive https://github.com/wrboyce/oh-my-zsh-custom.git ${HOME}/.oh-my-zsh-custom
 
 echo "Installing config..."
 ln -s ~/.oh-my-zsh-custom/zshrc ~/.zshrc
