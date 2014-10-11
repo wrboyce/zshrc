@@ -17,7 +17,7 @@ plugins=(django docker extract fabric fasd github gitignore git-extras git-flow-
 command virtualenvwrapper.sh 2>/dev/null && plugins=($plugins virtualenvwrapper)
 if [[ $(uname -s) == "Darwin" ]]; then
     plugins=(osx $plugins brew npmbrew copycmd)
-elif [[ ! -z $(cat /etc/issue 2>/dev/null | grep -Ei '(debian|ubuntu)') ]]; then
+elif [ -d /etc/apt ]; then
     plugins=($plugins debian)
 fi
 # load oh-my-zsh
