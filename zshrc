@@ -16,7 +16,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 plugins=(django docker extract fabric fasd github gitignore git-extras git-flow-avh npm pip python ssh-agent sudo urltools vagrant virtualenv zsh_reload zsh-syntax-highlighting)
 command virtualenvwrapper.sh 2>/dev/null && plugins=($plugins virtualenvwrapper)
 if [[ $(uname -s) == "Darwin" ]]; then
-    plugins=(osx $plugins brew npmbrew copycmd)
+    plugins=(osx $plugins brew copycmd tuntaposx)
 elif [ -d /etc/apt ]; then
     plugins=($plugins debian)
 fi
