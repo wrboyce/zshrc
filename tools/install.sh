@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -f ~/.zshrc] || [ -d ~/.oh-my-zsh-custom ]; then
+if [ -f ~/.zshrc ] || [ -d ~/.oh-my-zsh-custom ]; then
   echo "Previous (oh-my-)zsh config found at ~/.zshrc or ~/.oh-my-zsh-custom! Bailing..." >&2
   exit
 fi
