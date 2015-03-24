@@ -1,6 +1,7 @@
 # main settings
 [ -x /usr/libexec/path_helper ] && eval $(/usr/libexec/path_helper -s)
 [ -d /usr/local/bin ] && export PATH=/usr/local/bin:${PATH}
+[ -d /usr/local/sbin ] && export PATH=/usr/local/sbin:${PATH}
 [ -d ${HOME}/.bin ] && export PATH=${HOME}/.bin:${PATH}
 typeset -U PATH
 export ZSH=${HOME}/.oh-my-zsh
