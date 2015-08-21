@@ -9,4 +9,4 @@ alias history='fc -il 1'
 alias l='ls -lhAFv'
 
 # syntax highlighting cat (colour cat)
-(( $+commands[pygmentize] )) && alias ccat='pygmentize -g'
+(( $+commands[pygmentize] )) && alias c='pygmentize -g'
