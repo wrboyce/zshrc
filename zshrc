@@ -15,9 +15,9 @@ DISABLE_VENV_CD=1
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 DISABLE_AUTO_UPDATE=true
 # plugins
-plugins=(django docker extract fabric fasd gitignore git-extras git-flow-avh httpie npm nvm pep8 pip pylint python sudo sysadmin urltools vagrant virtualenv zsh_reload zsh-syntax-highlighting)
+plugins=(django docker extract fabric fasd gitignore git-extras git-flow-avh httpie nvm pep8 pip pylint python sudo sysadmin urltools vagrant virtualenv zsh_reload zsh-syntax-highlighting)
 (( $+commands[virtualenvwrapper.sh] )) && plugins=($plugins virtualenvwrapper)
-[ -d "${HOME}/.gnupg" ] && plugins=($plugins gpg-agent)
+# [ -d "${HOME}/.gnupg" ] && plugins=($plugins gpg-agent)
 if [[ $(uname -s) == "Darwin" ]]; then
     plugins=(osx $plugins brew copycmd tuntaposx virtualbox)
 elif [ -d /etc/apt ]; then
