@@ -22,6 +22,9 @@ if [[ $(uname -s) == "Darwin" ]]; then
     plugins=(osx $plugins brew copycmd tuntaposx virtualbox)
 elif [ -d /etc/apt ]; then
     plugins=($plugins debian ubuntu)
+elif [[ $(uname -s) == "FreeBSD" ]]; then
+    plugins=($plugins freebsd)
+    [ -f /cf/conf/config.xml ] && plugins=($plugins pfsense)
 fi
 # load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
