@@ -22,6 +22,7 @@ if [[ $(uname -s) == "Darwin" ]]; then
     plugins=(osx $plugins brew copycmd tuntaposx virtualbox)
 elif [ -d /etc/apt ]; then
     plugins=($plugins debian ubuntu)
+    grep -q 'DISTRIB_ID=Kali' /etc/lsb-release && plugins=($plugins kali)
 elif [[ $(uname -s) == "FreeBSD" ]]; then
     plugins=($plugins freebsd)
     [ -f /cf/conf/config.xml ] && plugins=($plugins pfsense)
