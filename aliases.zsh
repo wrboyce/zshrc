@@ -13,3 +13,6 @@ alias l='ls -lhAFv'
 
 # remove ag alias for apt-get if silver searcher is installed
 (( $+commands[ag] )) && unalias ag 2>/dev/null
+
+# use `assh` wrapper if available
+(( $+commands[assh] )) && alias ssh='assh wrapper ssh'
