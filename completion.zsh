@@ -9,3 +9,6 @@ zstyle ':completion:*'                      verbose yes                         
 zstyle ':completion:*:functions' ignored-patterns '_*'
 zstyle ':completion:*:parameters' ignored-patterns '_*'
 zstyle ':completion:*:*:*:users' ignored-patterns '_*'
+
+# make completion work for aliases
+setopt completealiases
