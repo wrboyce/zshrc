@@ -64,7 +64,11 @@ ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]='fg=none,underline'
 
 ## Supporting functions
 venv_prompt_info() {
-    [ ! -z ${VIRTUAL_ENV} ] && echo "${ZSH_THEME_VENV_PROMPT_PREFIX}${VIRTUAL_ENV##*/}${ZSH_THEME_VENV_PROMPT_SUFFIX}"
+    if [ ! -z ${VIRTUAL_ENV} ]; then
+        local label=${VIRTUAL_ENV##*/}
+        [ ! -z ${VIRTUAL_ENV_LABEL} ] && label="${label}${ZSH_THEME_COLOUR_2}:${ZSH_THEME_COLOUR_1}${VIRTUAL_ENV_LABEL}"
+        echo "${ZSH_THEME_VENV_PROMPT_PREFIX}${label}${ZSH_THEME_VENV_PROMPT_SUFFIX}"
+    fi
 }
 sudo_prompt_info() {
     [[ "${DEFAULT_USERNAME}" == "${USERNAME}" ]] || echo "${ZSH_THEME_SUDO_PROMPT_PREFIX}${USERNAME}${ZSH_THEME_SUDO_PROMPT_SUFFIX}"
