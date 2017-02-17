@@ -15,10 +15,14 @@ DISABLE_VENV_CD=1
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 DISABLE_AUTO_UPDATE=true
 zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent identities id_ed25519
 # plugins
-plugins=(django docker extract fabric fasd gitignore git-extras git-flow-avh httpie iterm nvm pep8 pip pylint python ssh-agent sudo sysadmin urltools vagrant virtualenv zsh_reload zsh-syntax-highlighting)
+plugins=(django docker extract fabric fasd gitignore git-extras git-flow-avh httpie iterm nvm pep8 pip pylint python sudo sysadmin urltools vagrant virtualenv zsh_reload zsh-syntax-highlighting)
 (( $+commands[virtualenvwrapper.sh] )) && plugins=($plugins virtualenvwrapper)
 # [ -d "${HOME}/.gnupg" ] && plugins=($plugins gpg-agent)
+if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then
+    plugins=($plugins ssh-agent)
+fi
 if [[ $(uname -s) == "Darwin" ]]; then
     plugins=(osx $plugins brew copycmd tuntaposx virtualbox)
 elif [ -d /etc/apt ]; then
