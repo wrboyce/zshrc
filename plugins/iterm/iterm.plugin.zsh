@@ -1,10 +1,11 @@
 PLUGIN_DIR="${0%/*}"
 source "${PLUGIN_DIR}/shell_integration.zsh"
 
-function imgcat() {
-  ${PLUGIN_DIR}/bin/imgcat $@
-}
-
-function it2dl() {
-  ${PLUGIN_DIR}/bin/it2dl $@
-}
+alias imgcat="${PLUGIN_DIR}/imgcat"
+alias imgls="${PLUGIN_DIR}/imgls"
+alias it2attention="${PLUGIN_DIR}/it2attention"
+alias it2check="${PLUGIN_DIR}/it2check"
+alias it2copy="${PLUGIN_DIR}/it2copy"
+alias it2dl="${PLUGIN_DIR}/it2dl"
+alias it2getvar="${PLUGIN_DIR}/it2getvar"
+alias it2setcolor="${PLUGIN_DIR}/it2setcolor"
