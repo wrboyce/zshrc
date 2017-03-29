@@ -19,3 +19,12 @@ alias l='ls -lhAFv'
 
 # use `assh` wrapper if available
 (( $+commands[assh] )) && alias ssh='assh wrapper ssh'
+
+# use `ripgrep` over `silver-searcher` if available
+(( $+commands[rg] )) && alias ag='_deprecate ag rg'
+
+function _deprecate() {
+  cmd=$1; shift
+  echo 'WARNING: `'$cmd'` is deprecated, use `'$1'`' 2>/dev/null
+  $@
+}
