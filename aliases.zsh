@@ -10,6 +10,8 @@ alias history='fc -il 1'
 
 # nice `ls`
 alias l='ls -lhAFv'
+# and a nice `tree`!
+alias t='tree -F'
 
 # syntax highlighting cat (colour cat)
 (( $+commands[pygmentize] )) && alias c='pygmentize -g'
