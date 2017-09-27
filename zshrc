@@ -17,7 +17,7 @@ DISABLE_AUTO_UPDATE=true
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_ed25519
 # plugins
-plugins=(django docker extract fabric fasd gitignore git-extras git-flow-avh golang httpie iterm nvm pep8 pip pylint python sudo sysadmin urltools vagrant virtualenv zsh_reload zsh-syntax-highlighting)
+plugins=(django docker extract fabric fasd gitignore git-extras git-flow-avh golang httpie iterm nvm pep8 pip pylint python sudo sysadmin urltools vagrant virtualenv workenv zsh_reload zsh-syntax-highlighting)
 (( $+commands[virtualenvwrapper.sh] )) && plugins=($plugins virtualenvwrapper)
 [ -d "${HOME}/.gnupg" ] && plugins=($plugins gpg-agent)
 if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then
