@@ -14,7 +14,7 @@ alias l='ls -lhAFv'
 alias t='tree -F'
 
 # syntax highlighting cat (colour cat)
-(( $+commands[pygmentize] )) && alias c='pygmentize -g'
+(( $+commands[ccat] )) && alias c=ccat
 
 # remove ag alias for apt-get if silver searcher is installed
 (( $+commands[ag] )) && unalias ag 2>/dev/null
