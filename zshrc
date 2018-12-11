@@ -1,12 +1,26 @@
-# main settings
+# path settings
 [ -x /usr/libexec/path_helper ] && eval $(/usr/libexec/path_helper -s)
 [ -d /usr/local/bin ] && export PATH=/usr/local/bin:${PATH}
 [ -d /usr/local/sbin ] && export PATH=/usr/local/sbin:${PATH}
 [ -d ${HOME}/.bin ] && export PATH=${HOME}/.bin:${PATH}
-typeset -U PATH
+function _order_path() {
+    local home_paths=()
+    local global_paths=()
+    local part
+    for part in $path; do
+        if [[ "$part" == "${HOME}"* ]]; then
+            home_paths=($home_paths $part)
+        else
+            global_paths=($global_paths $part)
+        fi
+    done
+    path=($home_paths $global_paths)
+}
+_order_path
+
+# omz configuration
 export ZSH=${HOME}/.oh-my-zsh
 export ZSH_CUSTOM=${HOME}/.oh-my-zsh-custom
-# configuration
 ZSH_THEME="wrboyce"
 DEFAULT_USERNAME="wrboyce"
 COMPLETION_WAITING_DOTS="true"
@@ -16,6 +30,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 DISABLE_AUTO_UPDATE=true
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_ed25519
+
 # plugins
 plugins=(base16-shell django docker extract fabric fasd gitignore git-extras git-flow-avh golang httpie iterm nvm pep8 pip pylint python sudo sysadmin urltools vagrant virtualenv workenv zsh_reload zsh-syntax-highlighting)
 (( $+commands[virtualenvwrapper.sh] )) && plugins=($plugins virtualenvwrapper)
@@ -32,5 +47,9 @@ elif [[ $(uname -s) == "FreeBSD" ]]; then
     plugins=($plugins freebsd)
     [ -f /cf/conf/config.xml ] && plugins=($plugins pfsense)
 fi
+
 # load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
+# de-dupe/order paths
+_order_path
