@@ -24,7 +24,7 @@ if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then
     plugins=($plugins ssh-agent)
 fi
 if [[ $(uname -s) == "Darwin" ]]; then
-    plugins=(osx $plugins brew copycmd tuntaposx virtualbox)
+    plugins=(osx $plugins brew copycmd fzf tuntaposx virtualbox)
 elif [ -d /etc/apt ]; then
     plugins=($plugins debian ubuntu)
     grep -q 'DISTRIB_ID=Kali' /etc/lsb-release && plugins=($plugins kali)
