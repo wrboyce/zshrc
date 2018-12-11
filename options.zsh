@@ -1,2 +1,0 @@
-setopt extendedglob
-setopt interactivecomments

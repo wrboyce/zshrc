@@ -1,9 +1,0 @@
-[submodule "plugins/zsh-syntax-highlighting"]
-	path = plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "plugins/workenv"]
-	path = plugins/workenv
-	url = https://github.com/wrboyce/zsh-workenv
-[submodule "plugins/base16"]
-	path = plugins/base16-shell
-	url = https://github.com/chriskempson/base16-shell

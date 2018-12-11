@@ -1,0 +1,6 @@
+for cfg in "${${(%):-%N}:A:h}/${${(%):-%N}:a:e}.d/"**/*.zsh(N); do
+    if [[ ! -s "${cfg}.zwc" || "${cfg}" -nt "${cfg}.zwc" ]]; then
+        zcompile "$cfg"
+    fi
+    source "$cfg"
+done
