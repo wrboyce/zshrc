@@ -17,7 +17,7 @@ for cmd in "${required_commands[@]}"; do
 done
 unset required_commands
 
-wanted_commands=(fasd fzf)
+wanted_commands=(fasd)
 for cmd in "${wanted_commands[@]}"; do
   if ! (( ${+commands[${cmd}]} )); then
     echo 'WARNING: Cannot find `'"${cmd}"'` binary in PATH' >&2
