@@ -1,10 +1,10 @@
-- [X] WORDCHARS
-- [ ] virtualbox (mkvbox function)
+- [x] WORDCHARS
+- [x] virtualbox (mkvbox function)
 - [ ] ^k to clear screen
-- [ ] auto-sudo on apt-get
-- [ ] iTerm2 Plugin/binaries
-- [ ] cargo path!
+- [x] auto-sudo on apt-get
+- [x] iTerm2 Plugin/binaries
+- [x] cargo path!
 - [ ] man-preview
-- [ ] always hide default username
+- [x] always hide default username
 - [ ] make root[@...] red
-- [X] truncate to package name -> repo name (local, remote(:origin))
+- [x] truncate to package name -> repo name (local, remote(:origin))

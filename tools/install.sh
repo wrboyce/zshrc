@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 set -eu
 
-ZDOTDIR=${ZDOTDIR-${HOME}}
+ZDOTDIR="${ZDOTDIR-${HOME}}"
 
 if [ -f "${ZDOTDIR}/.zshenv" ] || [ -f "${ZDOTDIR}/.zshrc" ] || [ -d "${ZDOTDIR}/.zsh" ]; then
   echo "ERROR: Previous zsh config found at ${ZDOTDIR}/.zshenv, ${ZDOTDIR}/.zshrc, or ${ZDOTDIR}/.zsh! Bailing..." >&2
@@ -18,8 +18,8 @@ done
 unset required_commands
 
 echo '==> Cloning zsh config...'
-git clone --quiet --recursive https://github.com/wrboyce/oh-my-zsh-custom.git "${ZDOTDIR}/.zsh"
+git clone --quiet --recursive https://github.com/wrboyce/zshrc.git "${ZDOTDIR}/.zsh"
 
 echo '==> Activating config...'
-ln -sv "${ZDOTDIR}/.zsh/zshenv" "${ZDOTDIR}/.zshenv"
-ln -sv "${ZDOTDIR}/.zsh/zshrc" "${ZDOTDIR}/.zshrc"
+ln -sv "${ZDOTDIR}/.zsh/main.zsh" "${ZDOTDIR}/.zshenv"
+ln -sv "${ZDOTDIR}/.zsh/main.zsh" "${ZDOTDIR}/.zshrc"

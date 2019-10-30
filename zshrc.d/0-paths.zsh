@@ -1,3 +1,6 @@
+## setup initial paths and bootstrap ready for loading config
+
+
 function _order_path() {
     local home_paths=()
     local global_paths=()

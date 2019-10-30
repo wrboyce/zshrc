@@ -1,5 +1,5 @@
-zplugin ice as'program' pick'fasd'
-zplugin load clvv/fasd
+##
+
 
 # cache init script as to avoid binary execution and allow compilation
 fasd_cache="${ZSH_HOME}/cache/fasd/init.zsh"
@@ -7,8 +7,8 @@ mkdir -p "${fasd_cache:h}" 2>/dev/null
 if [[ ! -s "${fasd_cache}" || "${commands[fasd]}" -nt "${fasd_cache}" ]]; then
     # load everything but the aliases
     fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install >! "${fasd_cache}"
-    zcompile "${fasd_cache}"
 fi
+zsource "${fasd_cache}" false
 zplugin ice id-as'clvv/fasd-shell' pick'init.zsh'
 zplugin load "${fasd_cache:h}"
 unset fasd_cache

@@ -1,3 +1,6 @@
+## settings related to completions, I even understand what some of them do...
+
+
 setopt automenu
 setopt autoparamslash
 setopt autoremoveslash
@@ -15,10 +18,12 @@ zstyle ':completion:*' list-colors ''  # ??
 
 zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
 
+# disable named directory completion
 zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
 
+# use ~/.zcompcache (because slow completion is slow)
 zstyle ':completion::complete:*' use-cache 1
-# zstyle ':completion::complete:*' cache-path TODO
+# zstyle ':completion::complete:*' cache-path
 
 zstyle -e ':completion:*:approximate:*'     max-errors 'reply=( $(( ($#PREFIX + $#SUFFIX) / 3 )) )'
 zstyle ':completion:*:descriptions'         format "- %d -"
@@ -30,3 +35,7 @@ zstyle ':completion:*'                      verbose yes                         
 zstyle ':completion:*:functions' ignored-patterns '_*'
 zstyle ':completion:*:parameters' ignored-patterns '_*'
 zstyle ':completion:*:*:*:users' ignored-patterns '_*'
+
+# snaz up ssh completion a bit
+zstyle ':completion::complete:ssh:argument-1:' tag-order !users
+zstyle ':completion::complete:ssh:argument-1:hosts' ignored-patterns 'git.*' '*(:)*' loopback ip6-loopback localhost ip6-localhost broadcasthost
