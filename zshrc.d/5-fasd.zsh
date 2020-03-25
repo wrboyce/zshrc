@@ -9,8 +9,8 @@ if [[ ! -s "${fasd_cache}" || "${commands[fasd]}" -nt "${fasd_cache}" ]]; then
     fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install >! "${fasd_cache}"
 fi
 zsource "${fasd_cache}" false
-zplugin ice id-as'clvv/fasd-shell' pick'init.zsh'
-zplugin load "${fasd_cache:h}"
+zinit ice id-as'clvv/fasd-shell' pick'init.zsh'
+zinit load "${fasd_cache:h}"
 unset fasd_cache
 
 # needed for `z`, and only supplied with `--posix-aliases`

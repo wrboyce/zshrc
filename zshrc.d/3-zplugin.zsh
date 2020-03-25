@@ -1,9 +1,9 @@
-## initialise zplugin
+## initialise zinit
 
 
-if [ ! -d "${ZDOTDIR-${HOME}}/.zplugin" ]; then
-    mkdir -p "${ZDOTDIR-${HOME}}/.zplugin"
-    git clone --quiet --recursive --single-branch https://github.com/zdharma/zplugin.git "${ZDOTDIR-${HOME}}/.zplugin/bin"
+if [ ! -d "${ZDOTDIR-${HOME}}/.zinit" ]; then
+    mkdir -p "${ZDOTDIR-${HOME}}/.zinit"
+    git clone --quiet --recursive --single-branch https://github.com/zdharma/zinit.git "${ZDOTDIR-${HOME}}/.zinit/bin"
 fi
 
-source "${ZDOTDIR-${HOME}}/.zplugin/bin/zplugin.zsh"
+source "${ZDOTDIR-${HOME}}/.zinit/bin/zinit.zsh"

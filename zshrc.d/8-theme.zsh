@@ -1,5 +1,5 @@
-zplugin ice pick'scripts/base16-solarized-dark.sh'
-zplugin load chriskempson/base16-shell
+zinit ice pick'scripts/base16-solarized-dark.sh'
+zinit load chriskempson/base16-shell
 
 # TODO:
 # - fix colours
@@ -326,18 +326,18 @@ _init_theme () {
   typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 }
 _init_theme
-zplugin ice src'powerlevel10k.zsh-theme' wait'0' lucid
-zplugin light romkatv/powerlevel10k
+zinit ice src'powerlevel10k.zsh-theme' wait'0' lucid
+zinit light romkatv/powerlevel10k
 
-zplugin ice wait'1' atload'!_zsh_autosuggest_start' lucid
-zplugin light zsh-users/zsh-autosuggestions
+zinit ice wait'1' atload'!_zsh_autosuggest_start' lucid
+zinit light zsh-users/zsh-autosuggestions
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 fast_syntax_atinit=(
-    "ZPLGM[COMPINIT_OPTS]=-C"
-    "zpcompinit"
-    "zpcdreplay"
+    "ZINIT[COMPINIT_OPTS]=-C"
+    "zicompinit"
+    "zicdreplay"
 )
-zplugin ice wait'2' atinit"${(j:; :)fast_syntax_atinit}" lucid
-zplugin light zdharma/fast-syntax-highlighting
+zinit ice wait'2' atinit"${(j:; :)fast_syntax_atinit}" lucid
+zinit light zdharma/fast-syntax-highlighting
 unset fast_syntax_atinit

@@ -9,5 +9,5 @@ if (( $+commands[fd] )); then
     }
 fi
 
-zplugin ice multisrc='shell/{completion,key-bindings}.zsh' compile'shell/{completion,key-bindings}.zsh' id-as'junegunn/fzf-shell'
-zplugin load junegunn/fzf
+zinit ice multisrc='shell/{completion,key-bindings}.zsh' compile'shell/{completion,key-bindings}.zsh' id-as'junegunn/fzf-shell'
+zinit load junegunn/fzf
