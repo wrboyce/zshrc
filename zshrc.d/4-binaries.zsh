@@ -2,7 +2,7 @@
 
 
 # `ls` replacement
-zinit ice from"gh-r" as"program" mv"*/lsd -> lsd"
+zinit ice from"gh-r" as"program" pick"*/lsd"
 zinit light Peltoche/lsd
 if (( $+commands[lsd] )); then
     (( ! $TERM_IS_FANCY )) && _lsd_args="--icon=never"
@@ -19,7 +19,7 @@ if [ -f "${HOME}/.ssh/assh.yml" ]; then
 fi
 
 # `cat` replacement
-zinit ice as"program" from"gh-r" mv"bat-*/bat -> bat"
+zinit ice as"program" from"gh-r" pick"bat-*/bat"
 zinit light @sharkdp/bat
 alias c='cat'
 alias cn='cat -n'
@@ -31,11 +31,11 @@ if (( $+commands[bat] )); then
 fi
 
 # `find` replacement
-zinit ice as"program" from"gh-r" mv"fd-*/fd -> fd"
+zinit ice as"program" from"gh-r" pick"fd-*/fd"
 zinit light @sharkdp/fd
 
 # `grep` replacement
-zinit ice as"program" from"gh-r" mv"ripgrep-*/rg -> rg"
+zinit ice as"program" from"gh-r" pick"ripgrep-*/rg"
 zinit light BurntSushi/ripgrep
 
 # `diff` replacement
@@ -48,7 +48,7 @@ zinit ice as"program" from"gh-r" mv"jq-* -> jq"
 zinit light stedolan/jq
 
 # hex editor
-zinit ice as"program" from"gh-r" mv"hexyl-*/hexyl -> hexyl"
+zinit ice as"program" from"gh-r" pick"hexyl-*/hexyl"
 zinit light @sharkdp/hexyl
 
 # fuzzy finder
@@ -61,11 +61,11 @@ zinit light clvv/fasd
 
 # docker-compose
 if (( $+commands[docker] )); then
-    zinit ice as"program" from"gh-r" mv"docker-compose-* -> docker-compose"
+    zinit ice as"program" from"gh-r" bpick"*.tgz" mv"docker-compose-* -> docker-compose"
     zinit light docker/compose
 fi
 
 if (( $+commands[git] )) && [ -f "${HOME}/.gitconfig" ]; then
-    zinit ice id-as"github/hub-bin" as"program" from"gh-r" mv"hub-*/bin/hub -> hub"
+    zinit ice id-as"github/hub-bin" as"program" from"gh-r" pick"hub-*/bin/hub"
     zinit light github/hub
 fi
