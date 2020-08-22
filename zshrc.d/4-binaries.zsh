@@ -15,7 +15,7 @@ fi
 if [ -f "${HOME}/.ssh/assh.yml" ]; then
     zinit ice as"program" from"gh-r" mv"assh_* -> assh"
     zinit light moul/assh
-    (( $+commands[assh] )) && alias ssh='assh wrapper ssh'
+    # (( $+commands[assh] )) && alias ssh='assh wrapper ssh'
 fi
 
 # `cat` replacement
@@ -27,6 +27,7 @@ if (( $+commands[bat] )); then
     export BAT_THEME="Solarized (dark)"
     alias b='bat'
     alias c='bat -p'
+    alias ca='bat -p --pager=never'
     alias cn='bat -n'
 fi
 
