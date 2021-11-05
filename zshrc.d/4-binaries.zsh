@@ -7,8 +7,7 @@ zinit light Peltoche/lsd
 if (( $+commands[lsd] )); then
     (( ! $TERM_IS_FANCY )) && _lsd_args="--icon=never"
     alias l="lsd -lhAF --date relative ${_lsd_args}"
-    zpcompdef l=lsd
-    unset _lsd_args
+    # zpcompdef l=lsd
 fi
 
 # `ssh` wrapper
@@ -39,10 +38,9 @@ zinit light @sharkdp/fd
 zinit ice as"program" from"gh-r" pick"ripgrep-*/rg"
 zinit light BurntSushi/ripgrep
 
-# `diff` replacement
-zinit ice as"program" pick"third_party/build_fatpack/diff-so-fancy"
-zinit light so-fancy/diff-so-fancy
-(( $+commands[diff-so-fancy] )) && alias dsf='diff-so-fancy'
+# `diff replacement`
+zinit ice as"program" from"gh-r" pick"*/delta"
+zinit light dandavison/delta
 
 # json parser
 zinit ice as"program" from"gh-r" mv"jq-* -> jq"
@@ -60,10 +58,10 @@ zinit light junegunn/fzf-bin
 zinit ice as"program" pick"fasd"
 zinit light clvv/fasd
 
-# docker-compose
+# docker
 if (( $+commands[docker] )); then
-    zinit ice as"program" from"gh-r" bpick"*.tgz" mv"docker-compose-* -> docker-compose"
-    zinit light docker/compose
+    # docker completion
+    zinit as'completion' for https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
 fi
 
 if (( $+commands[git] )) && [ -f "${HOME}/.gitconfig" ]; then

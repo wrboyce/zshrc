@@ -14,3 +14,5 @@ bindkey "\es" _subshell-command-line
 
 # vim-ish ^D should kill the rest of the line
 bindkey "^D" kill-line
+
+# TODO: add some more vim-like bindings for start/end of line

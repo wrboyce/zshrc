@@ -22,8 +22,7 @@ zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w 
 zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
 
 # use ~/.zcompcache (because slow completion is slow)
-zstyle ':completion::complete:*' use-cache 1
-# zstyle ':completion::complete:*' cache-path
+zstyle ':completion:*' use-cache on
 
 zstyle -e ':completion:*:approximate:*'     max-errors 'reply=( $(( ($#PREFIX + $#SUFFIX) / 3 )) )'
 zstyle ':completion:*:descriptions'         format "- %d -"

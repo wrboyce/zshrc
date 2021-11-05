@@ -1,22 +1,27 @@
 zinit ice pick'scripts/base16-solarized-dark.sh'
 zinit load chriskempson/base16-shell
 
-# TODO:
-# - fix colours
-# - custom component for [ssh?][!wrboyce@][!localhost]
 _init_theme () {
   unset -m 'POWERLEVEL9K_*'
 
+  prompt_smart_context() {
+    local user host fg='blue'
+    [ "${(%):-%n}" != "${DEFAULT_USER}" ] && user="${(%):-%n}"
+    [ "${user}" = "root" ] && fg='red'
+    (( P9K_SSH )) && host="${${(%):-%m}#1}"
+    [ -n "${user}" ] && [ -n "${host}" ] && user="${user}@"
+    p10k segment -f "${fg}" -t "${user}${host}"
+  }
+
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-      # my_context
-      virtualenv
+      smart_context
+      workenv
       dir
       vcs
-      root_indicator
   )
 
   # only show RHS elements when appropriate commands are being run
-  typeset -g POWERLEVEL9K_AWS_SHOW_ON_COMMAND='aws'
+  typeset -g POWERLEVEL9K_AWS_SHOW_ON_COMMAND='aws|terraform'
   typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc|istioctl|kogito|k9s'
 
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(

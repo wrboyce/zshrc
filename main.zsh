@@ -13,7 +13,7 @@ unset _load_zplmod
 # compile first if necessary
 zsource() {
     local cfg="$1" load="${2-true}"
-    if (( ! $+modules[zdharma/zinit] )) && [[ ! -s "${cfg}.zwc" || "${cfg}" -nt "${cfg}.zwc" ]]; then
+    if (( ! $+modules[zdharma/zplugin] )) && [[ ! -s "${cfg}.zwc" || "${cfg}" -nt "${cfg}.zwc" ]]; then
         zcompile "$cfg"
     fi
     [ "${load}" = "true" ] && source "$cfg"
