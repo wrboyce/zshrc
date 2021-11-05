@@ -344,5 +344,5 @@ fast_syntax_atinit=(
     "zicdreplay"
 )
 zinit ice wait'2' atinit"${(j:; :)fast_syntax_atinit}" lucid
-zinit light zdharma/fast-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 unset fast_syntax_atinit
