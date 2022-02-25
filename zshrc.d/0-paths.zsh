@@ -18,7 +18,10 @@ function _order_path() {
 [ -x /usr/libexec/path_helper ] && eval $(/usr/libexec/path_helper -s)
 [ -d /usr/local/bin ] && export PATH=/usr/local/bin:${PATH}
 [ -d /usr/local/sbin ] && export PATH=/usr/local/sbin:${PATH}
+[ -d /opt/homebrew/bin ] && export PATH=/opt/homebrew/bin:${PATH}
+[ -d /opt/homebrew/sbin ] && export PATH=/opt/homebrew/sbin:${PATH}
 [ -d ${HOME}/.bin ] && export PATH=${HOME}/.bin:${PATH}
+[ -d ${HOME}/.local/bin ] && export PATH=${HOME}/.local/bin:${PATH}
 [ -d ${HOME}/.cargo/bin ] && export PATH=${HOME}/.cargo/bin:${PATH}
 
 _order_path

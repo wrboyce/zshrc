@@ -3,6 +3,7 @@
 
 # pretty-print $PATH
 alias paths='echo -e ${PATH//:/\\n} | cat -n'
+alias fpaths='echo -e ${FPATH//:/\\n} | cat -n'
 
 # Super user
 alias _='sudo'
@@ -19,3 +20,6 @@ alias t='tree -FC'
 # recursive git clone; think `git get`
 alias gg='git clone --recursive'
 # compdef gg=git-clone
+
+# "terraform" is such a long word!
+alias tf=terraform

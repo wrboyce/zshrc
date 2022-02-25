@@ -11,7 +11,7 @@ _ssh::start_agent () {
     echo "Starting ssh-agent..."
     ssh-agent > "${_ssh_env_cache}"
     chmod 600 "${_ssh_env_cache}"
-    source "${_ssh_env_cache}" &>/dev/null
+    zsource "${_ssh_env_cache}" &>/dev/null
     ssh-add -K
 }
 

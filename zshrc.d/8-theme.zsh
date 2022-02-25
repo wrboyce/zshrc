@@ -16,16 +16,18 @@ _init_theme () {
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
       smart_context
       workenv
+      direnv
       dir
       vcs
   )
 
   # only show RHS elements when appropriate commands are being run
   typeset -g POWERLEVEL9K_AWS_SHOW_ON_COMMAND='aws|terraform'
-  typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc|istioctl|kogito|k9s'
+  typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc|istioctl|kogito|k9s|flux'
 
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     aws
+    terraform
     kubecontext
       # status
       # background_jobs
@@ -331,7 +333,7 @@ _init_theme () {
   typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 }
 _init_theme
-zinit ice src'powerlevel10k.zsh-theme' wait'0' lucid
+zinit ice src'powerlevel10k.zsh-theme' # wait'0' lucid
 zinit light romkatv/powerlevel10k
 
 zinit ice wait'1' atload'!_zsh_autosuggest_start' lucid
