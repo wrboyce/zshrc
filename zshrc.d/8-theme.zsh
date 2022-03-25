@@ -1,5 +1,12 @@
-zinit ice pick'scripts/base16-solarized-dark.sh'
-zinit load chriskempson/base16-shell
+darkmode() {
+  zinit pick=scripts/base16-solarized-dark.sh for chriskempson/base16-shell
+}
+
+lightmode() {
+  zinit pick=scripts/base16-solarized-light.sh for chriskempson/base16-shell
+}
+
+darkmode
 
 _init_theme () {
   unset -m 'POWERLEVEL9K_*'
