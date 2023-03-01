@@ -23,3 +23,10 @@ alias gg='git clone --recursive'
 
 # "terraform" is such a long word!
 alias tf=terraform
+
+alias awk-fzf='echo "" | fzf --print-query --preview "awk {q} < $1"'
+alias jq-fzf='echo "" | fzf --print-query --preview "jq {q} < $1"'
+
+# ipv6 stuff
+alias curl6='curl -6'
+alias nmap6='nmap -6'

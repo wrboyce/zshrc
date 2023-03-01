@@ -72,3 +72,9 @@ if (( $+commands[bat] )); then
     alias ca='bat -p --pager=never'
     alias cn='bat -n'
 fi
+if (( $+commands[prettybat] )); then
+    alias pc=prettybat
+fi
+if (( $+commands[batman] )); then
+    alias man=batman
+fi
