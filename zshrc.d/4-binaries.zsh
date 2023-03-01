@@ -54,6 +54,8 @@ if [[ "${OSTYPE}-${MACHTYPE}" != darwin*-arm ]]; then
         #     for cli/cli
         zinit id-as"github/hub" as"program" from"gh-r" pick"hub-*/bin/hub" \
             for @github/hub
+        zinit as'completion' id-as'github/hub-shell' pick'hub.zsh_completion -> _hub' pick'_hub' \
+            for https://github.com/github/hub/blob/master/etc/hub.zsh_completion
     fi
 fi
 
